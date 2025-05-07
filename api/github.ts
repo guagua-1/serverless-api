@@ -7,15 +7,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     data = req.query || req.body
   }
   try {
-    const { user, repo, event_type, token } = data
+    const { cratc, notion-halo, deploy, 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 } = data
     const result = await axios.post(
-      `https://api.github.com/repos/${user}/${repo}/dispatches`,
-      { event_type },
+      `https://api.github.com/repos/${cratc}/${notion-halo}/dispatches`,
+      { deploy },
       {
         headers: {
           "User-Agent": "@elog/serverless-api",
           Accept: '*/*',
-          Authorization: `token ${token}`,
+          Authorization: `token ${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}`,
         },
       }
     );
