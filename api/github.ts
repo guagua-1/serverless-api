@@ -9,13 +9,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { cratc, notion-halo, deploy, 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 } = data
     const result = await axios.post(
-      `https://api.github.com/repos/${cratc}/${notion-halo}/dispatches`,
-      { deploy },
+      `https://api.github.com/repos/${user}/${repo}/dispatches`,
+      { event_type },
       {
         headers: {
           "User-Agent": "@elog/serverless-api",
           Accept: '*/*',
-          Authorization: `token ${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}`,
+          Authorization: `token ${token}`,
         },
       }
     );
